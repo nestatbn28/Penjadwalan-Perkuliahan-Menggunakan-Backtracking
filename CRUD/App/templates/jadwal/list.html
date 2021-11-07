@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{page_title}}
+{% endblock title %}
+
+
+{% block contents %}
+<div class="container shadow-lg p-3 mb-5 bg-white rounded" style="margin-top:50px">
+<h3 style="text-align:center ;">Data Penjadwalan Prodi D3TK  </h3>
+    <table class="table" style="margin-top:10px">
+        <thead style="text-align:center ;">
+            <tr>
+                <th style="width: 30%;">Mata kuliah</th>
+                <th style="width: 30%;">Pengajar</th>
+                <th style="width: 30%;">Kelas</th>
+                <th style="width: 30%;">Sesi</th>
+                <th style="width: 30%;">Hari</th>
+                <th style="width: 30%;">Akun</th>
+            </tr>
+        </thead>
+        <tbody style="text-align:center ;">
+            {% for jdw in semua_jadwal %}
+              <tr>
+                  <td style="width: 30%;">{{jdw.pengajar}}</td>
+                  <td style="width: 30%;">{{jdw.matkul}}</td>
+                  <td style="width: 30%;">{{jdw.kelas}}</td>
+                  <td style="width: 30%;">{{jdw.sesi}}</td>
+                  <td style="width: 30%;">{{jdw.hari}}</td>
+                  <td style="width: 30%;">{{jdw.akun}}</td>
+              </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock contents %}
